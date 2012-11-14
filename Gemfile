@@ -5,7 +5,7 @@ gem 'mysql2', '0.3.11'
 gem 'jquery-rails'
 
 group :production do
-  
+  gem 'pg', '0.12.2'
 end
 
 group :development do
