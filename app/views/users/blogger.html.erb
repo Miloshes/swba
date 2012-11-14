@@ -1,0 +1,39 @@
+Why you should apply?
+
+<%= form_for @user, :url =>{ :action => "save_blogger" }, :html => { :method => "post" } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-error fade in out">
+      <a class="close" data-dismiss="alert">x</a>
+      <b><%= pluralize(@user.errors.count, "error") %> prohibited your account from being created:</b>
+      
+      <% @user.errors.full_messages.each do |msg| %>
+        </br>- <%= msg %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="clearfix">
+  	<%= f.label :full_name %>
+  	<div class="input">
+  		<%= f.text_field :full_name %>
+  	</div>
+  </div>
+  
+  <div class="clearfix">
+  	<%= f.label :email %>
+  	<div class="input">
+  		<%= f.text_field :email %>
+  	</div>
+  </div>
+  
+  <div class="clearfix">
+  	<%= f.label :website %>
+  	<div class="input">
+  		<%= f.text_field :website %>
+  	</div>
+  </div>
+  
+  <div class="actions">
+  	<%= f.submit "APPLY", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>
