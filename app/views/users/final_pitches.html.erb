@@ -1,0 +1,36 @@
+<h1>So you want to see Bratislava's newest startups, hm?</h1>
+
+Seats remaining: <strong><%= @remaining %></strong>
+</br>
+</br>
+<%= form_for @user, :url =>{ :action => "save_observer" }, :html => { :method => "post" } do |f| %>
+  <% if @user.errors.any? %>
+    <div class="alert alert-error fade in out">
+      <a class="close" data-dismiss="alert">x</a>
+      <b><%= pluralize(@user.errors.count, "error") %> prohibited your account from being created:</b>
+      
+      <% @user.errors.full_messages.each do |msg| %>
+        </br>- <%= msg %>
+      <% end %>
+    </div>
+  <% end %>
+
+  <div class="clearfix">
+  	<%= f.label :full_name %>
+  	<div class="input">
+  		<%= f.text_field :full_name %>
+  	</div>
+  </div>
+  
+  <div class="clearfix">
+  	<%= f.label :email %>
+  	<div class="input">
+  		<%= f.text_field :email %>
+  	</div>
+  </div>
+  
+  </br>
+  <div class="actions">
+  	<%= f.submit "Pay with share", class: "btn btn-large btn-primary" %>
+  </div>
+<% end %>

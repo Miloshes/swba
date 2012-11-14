@@ -1,5 +1,12 @@
-Why you should apply?
+<h1>Startup Weekend Bratislava seeks skilled bloggers</h1>
 
+Weekend starting on 16th November will be filled with startups and hard work.
+We want to bring some of it's atmosphere also to people who can't attend.
+</br>
+That's why we are looking for bloggers willing to write about this special event.
+You will get a chance to reach more than <strong>1400</strong> people on our social media channels and <strong>free entry</strong> to the venue.
+</br>
+</br>
 <%= form_for @user, :url =>{ :action => "save_blogger" }, :html => { :method => "post" } do |f| %>
   <% if @user.errors.any? %>
     <div class="alert alert-error fade in out">
@@ -32,7 +39,7 @@ Why you should apply?
   		<%= f.text_field :website %>
   	</div>
   </div>
-  
+  </br>
   <div class="actions">
   	<%= f.submit "APPLY", class: "btn btn-large btn-primary" %>
   </div>
